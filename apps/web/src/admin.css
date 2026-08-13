@@ -1,0 +1,340 @@
+@media (max-width: 800px) {
+  .admin-console-nav { margin-right: -2px; margin-left: -2px; }
+  .admin-command-grid, .admin-form-grid, .admin-hsk-grid, .admin-notification-layout { grid-template-columns: 1fr; }
+  .admin-field-wide, .admin-form-actions { grid-column: auto; }
+  .admin-form-card, .admin-history-card, .admin-hsk-card { padding: 17px; }
+  .admin-toolbar select { flex: 1; min-width: 145px; }
+  .admin-table { min-width: 760px; }
+}
+
+.admin-row-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.admin-row-actions .button {
+  min-height: 32px;
+  padding: 0 9px;
+  font-size: 10px;
+}
+
+.admin-page-actions,
+.admin-tree-node-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.admin-tree-node-actions {
+  padding-right: 8px;
+}
+
+.admin-tree-node-actions .button,
+.admin-row-actions .button {
+  min-width: 30px;
+  min-height: 30px;
+  padding: 0 7px;
+}
+
+.admin-tree-toolbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+}
+
+.admin-tree-toolbar label {
+  display: flex;
+  flex: 0 1 360px;
+  flex-direction: column;
+  gap: 7px;
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.admin-tree-toolbar select {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.admin-tree-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding-bottom: 11px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.admin-course-tree {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.admin-course-branch {
+  overflow: hidden;
+}
+
+.admin-course-branch-header {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 20px 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.admin-tree-course-icon,
+.admin-tree-lesson-icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  border-radius: 11px;
+}
+
+.admin-tree-course-icon {
+  width: 42px;
+  height: 42px;
+  color: var(--primary);
+  background: var(--primary-soft);
+}
+
+.admin-course-branch-header > div {
+  min-width: 0;
+  flex: 1;
+}
+
+.admin-course-branch-header h2 {
+  margin: 4px 0 2px;
+  font-size: 18px;
+}
+
+.admin-course-branch-header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.admin-course-branch-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.admin-tree-branches {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 22px 16px 45px;
+}
+
+.admin-tree-branch {
+  position: relative;
+  border-left: 1px solid #dfe5ee;
+}
+
+.admin-tree-branch:last-child {
+  border-left-color: transparent;
+}
+
+.admin-tree-branch-heading {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.admin-tree-branch-heading .admin-tree-branch-toggle {
+  flex: 1;
+}
+
+.admin-tree-branch-toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  min-height: 52px;
+  padding: 7px 9px 7px 12px;
+  border: 0;
+  border-radius: 9px;
+  color: var(--primary);
+  background: transparent;
+  text-align: left;
+}
+
+.admin-tree-branch-toggle:hover,
+.admin-tree-branch-toggle:focus-visible {
+  background: var(--canvas);
+}
+
+.admin-tree-branch-toggle > span:not(.badge) {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.admin-tree-branch-toggle strong {
+  overflow: hidden;
+  color: var(--ink);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.admin-tree-branch-toggle small {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.admin-tree-lessons {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 2px 0 8px 29px;
+}
+
+.admin-tree-lesson {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 56px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper);
+}
+
+.admin-tree-lesson:hover {
+  border-color: #d5dce7;
+  background: #fcfdff;
+}
+
+.admin-tree-connector {
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  width: 22px;
+  border-top: 1px solid #dfe5ee;
+}
+
+.admin-tree-lesson-icon {
+  width: 30px;
+  height: 30px;
+  color: var(--muted);
+  background: var(--canvas);
+}
+
+.admin-tree-lesson-copy {
+  min-width: 0;
+  flex: 1;
+}
+
+.admin-tree-lesson-copy strong,
+.admin-tree-lesson-copy small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.admin-tree-lesson-copy strong {
+  font-size: 11px;
+}
+
+.admin-tree-lesson-copy small {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+@media (max-width: 800px) {
+  .admin-tree-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .admin-tree-toolbar label {
+    flex-basis: auto;
+  }
+
+  .admin-tree-hint {
+    padding-bottom: 0;
+  }
+
+  .admin-course-branch-header {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 17px;
+  }
+
+  .admin-course-branch-actions {
+    width: 100%;
+    margin-left: 55px;
+  }
+
+  .admin-page-actions {
+    width: 100%;
+  }
+
+  .admin-page-actions .button {
+    flex: 1;
+  }
+
+  .admin-tree-branches {
+    padding-right: 12px;
+    padding-left: 25px;
+  }
+
+  .admin-tree-branch-heading {
+    align-items: stretch;
+  }
+
+  .admin-tree-node-actions {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .admin-tree-lesson > .admin-table-muted,
+  .admin-tree-lesson > .badge {
+    display: none;
+  }
+}
+
+.admin-content-layout { display: grid; grid-template-columns: minmax(340px, .85fr) minmax(0, 1.15fr); gap: 18px; align-items: start; }
+.admin-content-page .page-header { align-items: flex-start; }
+.admin-content-page .page-header > .admin-page-actions { margin-left: auto; }
+.admin-field-help { display: block; margin-top: 6px; color: var(--muted); font-size: 10px; line-height: 1.5; }
+.admin-content-list-card { min-width: 0; padding: 20px; }
+.admin-content-block-list { display: flex; flex-direction: column; gap: 9px; }
+.admin-content-block-row { display: grid; grid-template-columns: 36px minmax(0, 1fr) auto; align-items: center; gap: 11px; padding: 12px; border: 1px solid var(--line); border-radius: 11px; background: var(--paper); }
+.admin-content-block-icon { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 9px; color: var(--primary); background: var(--primary-soft); }
+.admin-content-block-copy { min-width: 0; }
+.admin-content-block-copy > div { display: flex; align-items: center; gap: 7px; min-width: 0; }
+.admin-content-block-copy strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; }
+.admin-content-block-copy small { display: block; overflow: hidden; margin-top: 5px; color: var(--muted); text-overflow: ellipsis; white-space: nowrap; font-size: 10px; }
+.admin-content-block-copy a { display: inline-flex; align-items: center; gap: 5px; margin-top: 7px; color: var(--primary); font-size: 10px; font-weight: 700; }
+.admin-content-block-actions { display: flex; align-items: center; gap: 4px; }
+.admin-content-block-actions .button { white-space: nowrap; }
+
+@media (max-width: 1000px) {
+  .admin-content-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .admin-content-page .page-header > .admin-page-actions { width: 100%; margin-left: 0; }
+  .admin-content-page .page-header > .admin-page-actions .button { flex: 1; }
+  .admin-content-block-row { grid-template-columns: 34px minmax(0, 1fr); }
+  .admin-content-block-actions { grid-column: 1 / -1; justify-content: flex-end; }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "hanlearn",
+  "version": "0.1.0",
+  "private": true,
+  "description": "HanLearn Chinese learning platform monorepo",
+  "workspaces": ["apps/*"],
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,green \"npm run dev --workspace @hanlearn/api\" \"npm run dev --workspace @hanlearn/web\"",
+    "build": "npm run build --workspaces",
+    "typecheck": "npm run typecheck --workspaces",
+    "lint": "npm run lint --workspaces",
+    "test": "npm run test --workspaces",
+    "db:generate": "npm run db:generate --workspace @hanlearn/api",
+    "db:migrate": "npm run db:migrate --workspace @hanlearn/api",
+    "db:seed": "npm run db:seed --workspace @hanlearn/api"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

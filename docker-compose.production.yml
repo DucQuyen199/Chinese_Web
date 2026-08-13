@@ -1,0 +1,38 @@
+services:
+  postgres:
+    restart: unless-stopped
+    ports: !reset []
+
+  api:
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      FRONTEND_URL: ${FRONTEND_URL:-https://learn.featai.tech}
+      JWT_ACCESS_SECRET: ${JWT_ACCESS_SECRET:?JWT_ACCESS_SECRET is required}
+      JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET:?JWT_REFRESH_SECRET is required}
+    ports: !reset []
+
+  web:
+    restart: unless-stopped
+    build:
+      args:
+        VITE_API_URL: ${VITE_API_URL:-/api/v1}
+    ports: !reset []
+
+  proxy:
+    image: nginx:1.27-alpine
+    restart: unless-stopped
+    depends_on:
+      api:
+        condition: service_healthy
+      web:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:80:80"
+    volumes:
+      - ./ops/nginx/docker.conf:/etc/nginx/conf.d/default.conf:ro
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O - http://127.0.0.1/health | grep -q healthy"]
+      interval: 10s
+      timeout: 5s
+      retries: 10

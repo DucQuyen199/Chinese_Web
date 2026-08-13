@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">HanLearn Chinese course cover</title>
+  <desc id="desc">Abstract red and navy cover with Chinese learning symbols.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#172b4d"/>
+      <stop offset="1" stop-color="#e53935"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#background)"/>
+  <circle cx="940" cy="120" r="260" fill="none" stroke="#fff" stroke-opacity=".18" stroke-width="2"/>
+  <circle cx="940" cy="120" r="190" fill="none" stroke="#fff" stroke-opacity=".16" stroke-width="2"/>
+  <path d="M0 600C230 470 360 790 620 620S980 370 1200 520V720H0Z" fill="url(#glow)"/>
+  <text x="76" y="116" fill="#fff" fill-opacity=".7" font-family="Arial, sans-serif" font-size="25" font-weight="700" letter-spacing="6">HANLEARN</text>
+  <text x="76" y="430" fill="#fff" font-family="Noto Sans SC, Arial, sans-serif" font-size="230" font-weight="500">中文</text>
+  <text x="82" y="506" fill="#fff" fill-opacity=".78" font-family="Arial, sans-serif" font-size="23" letter-spacing="3">HỌC QUA NGỮ CẢNH</text>
+</svg>

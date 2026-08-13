@@ -1,0 +1,60 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: hanlearn
+      POSTGRES_USER: hanlearn
+      POSTGRES_PASSWORD: hanlearn
+    ports:
+      - "5432:5432"
+    volumes:
+      - hanlearn_postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U hanlearn -d hanlearn"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build:
+      context: ./apps/api
+    environment:
+      NODE_ENV: development
+      PORT: 5000
+      DATABASE_URL: postgresql://hanlearn:hanlearn@postgres:5432/hanlearn?schema=public
+      JWT_ACCESS_SECRET: local-access-secret-change-me
+      JWT_REFRESH_SECRET: local-refresh-secret-change-me
+      FRONTEND_URL: http://localhost:5173
+      UPLOAD_DIR: /app/uploads
+    volumes:
+      - hanlearn_uploads:/app/uploads
+    ports:
+      - "5000:5000"
+    command: ["sh", "-c", "npx prisma db push && node dist/prisma/seed.js && node dist/src/server.js"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O - http://localhost:5000/health | grep -q healthy"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  web:
+    build:
+      context: ./apps/web
+      args:
+        VITE_API_URL: http://localhost:5000/api/v1
+    ports:
+      - "5173:80"
+    depends_on:
+      - api
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1/ || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  hanlearn_postgres:
+  hanlearn_uploads:

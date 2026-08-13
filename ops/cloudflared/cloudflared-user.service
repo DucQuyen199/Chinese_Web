@@ -1,0 +1,13 @@
+[Unit]
+Description=HanLearn Cloudflare Tunnel
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/home/quyen/.local/bin/cloudflared tunnel --config /home/quyen/.cloudflared/config.yml run hanlearn-tunnel
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target
