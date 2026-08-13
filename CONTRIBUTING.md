@@ -4,7 +4,7 @@ Thank you for helping improve HanLearn. Contributions are welcome in the form of
 
 ## Code of conduct
 
-Please be respectful, constructive, and inclusive. Harassment, discrimination, personal attacks, and knowingly harmful content are not acceptable. Maintainers may remove content or decline contributions that do not meet these standards.
+Please read and follow [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md). Be respectful, constructive, and inclusive. Harassment, discrimination, personal attacks, and knowingly harmful content are not acceptable. Maintainers may remove content or decline contributions that do not meet these standards.
 
 ## Before you start
 
@@ -108,11 +108,10 @@ Keep pull requests reviewable. If a change is large, split it into logically ind
 
 Use GitHub Issues for reproducible bugs, feature requests, and documentation improvements. Include the version/commit, environment, reproduction steps, expected behavior, actual behavior, and relevant logs with secrets removed.
 
-Do not publish an exploitable security vulnerability in a public issue. Contact the repository owner privately through GitHub with the affected area, impact, reproduction details, and a suggested mitigation.
+Do not publish an exploitable security vulnerability in a public issue. Follow [SECURITY.md](SECURITY.md) for the private reporting process, including the affected area, impact, reproduction details, and suggested mitigation.
 
 ## Review and merge
 
 Maintainers review correctness, security, accessibility, maintainability, test coverage, and documentation. A contribution may be requested for changes or declined if it introduces unacceptable risk or does not fit the project direction.
 
 By submitting a contribution, you agree that it is your original work or that you have permission to submit it, and that it is provided under the repository's [Apache License 2.0](LICENSE).
-

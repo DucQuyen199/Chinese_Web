@@ -27,6 +27,8 @@ The default interface language is Vietnamese and the learning content uses Simpl
 - [Testing and quality checks](#testing-and-quality-checks)
 - [Production deployment](#production-deployment)
 - [Security and privacy](#security-and-privacy)
+- [Security policy](SECURITY.md)
+- [Code of conduct](CODE_OF_CONDUCT.md)
 - [Contributing](#contributing)
 - [Roadmap](#roadmap)
 - [License](#license)
@@ -134,8 +136,10 @@ Chinese_Web/
 ├── ops/                             # Nginx and tunnel examples
 ├── package.json                     # npm workspace scripts
 ├── .env.example
+├── CODE_OF_CONDUCT.md
 ├── CONTRIBUTING.md
 ├── LICENSE
+├── SECURITY.md
 └── README.md
 ```
 
@@ -422,6 +426,8 @@ Review every domain, secret, port, volume, cookie, proxy, and database setting b
 
 ## Security and privacy
 
+For vulnerability reporting, follow [SECURITY.md](SECURITY.md). Community expectations and enforcement are documented in [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+
 - Never commit `.env` files, database dumps, tokens, private keys, uploads, or real personal data.
 - Never expose server-only secrets through `VITE_*` variables.
 - Do not use demo passwords on a public deployment.
@@ -432,7 +438,7 @@ Review every domain, secret, port, volume, cookie, proxy, and database setting b
 
 ## Contributing
 
-Contributions are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) before opening an issue or pull request.
+Contributions are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) before opening an issue or pull request.
 
 At a minimum:
 
@@ -475,4 +481,3 @@ Copyright 2026 Duc Quyen.
 HanLearn is distributed under the [Apache License 2.0](LICENSE). You may use, reproduce, modify, distribute, and use the project commercially subject to the license terms.
 
 When redistributing the project, retain the copyright, license, patent, trademark, and attribution notices required by Apache 2.0. Contributions submitted to this repository are licensed under Apache 2.0 unless a separate written agreement states otherwise.
-
